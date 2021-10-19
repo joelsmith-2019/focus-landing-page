@@ -26,10 +26,10 @@ const showTime = (repeat = true) => {
     let amPM = hours >= 12 ? "PM" : "AM";
 
     // 12-hour format
-    standardTime = hours % 12 || 12;
+    let standardTime = hours % 12 || 12;
 
     // Output time
-    time.innerHTML = `${showMilitaryTime ? hours : standardTime}:${appendZero(minutes)}:${appendZero(seconds)} ${showAmPm ? amPM : ''}`
+    time.innerHTML = `${showMilitaryTime ? appendZero(hours) : standardTime}:${appendZero(minutes)}:${appendZero(seconds)} ${showAmPm ? amPM : ''}`
 
     // Set repeating task
     if (repeat) setTimeout(showTime, 1000);
@@ -42,13 +42,12 @@ const appendZero = (num) => {
 
 // Set background and greeting
 const setBackground = () => {
-    let hour = 18;//new Date().getHours();
+    let hour = new Date().getHours();
 
     if (hour < 12) {
         // Morning
         document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')"
         greeting.textContent = "Good Morning";
-        document.body.style.color = "black";
     } else if (hour < 18) {
         // Afternoon
         document.body.style.backgroundImage = "url('https://i.ibb.co/3mThcXc/afternoon.jpg')"
@@ -57,6 +56,7 @@ const setBackground = () => {
         // Evening
         document.body.style.backgroundImage = "url('https://i.ibb.co/924T2Wv/night.jpg')";
         greeting.textContent = "Good Evening";
+        document.body.style.color = "white";
     }
 
     // Set repeating task

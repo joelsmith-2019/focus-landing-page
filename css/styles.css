@@ -1,15 +1,26 @@
+/* START GLOBAL STYLES */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* END GLOBAL STYLES */
+
+/* START BODY STYLES */
+
 body {
-    color: white;
+    color: black;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }
+
+/* END BODY STYLES */
+
+/* START MAIN STYLES */
 
 main {
     font-family: 'Quicksand', sans-serif;
@@ -18,7 +29,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 95vh;
+    height: 90vh;
 }
 
 #time {
@@ -27,29 +38,32 @@ main {
 
 h1 {
     margin-bottom: 3rem;
+    font-size: 3rem;
 }
 
 h2 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
     opacity: 0.8;
 }
 
 #question {
-    font-size: 2.5rem;
     font-variant: small-caps;
 }
 
+/* END MAIN STYLES */
 
-
-@media(max-width: 700px) {
-    #time {
-        font-size: 6rem;
-    }
-}
+/* START FOOTER STYLES */
 
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-contents {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -73,3 +87,37 @@ button:hover {
     color: black;
     cursor: pointer;
 }
+
+/* END FOOTER STYLES */
+
+/* START RESPONSIVE STYLES */
+
+@media(max-width: 700px) {
+    #time {
+        font-size: 6rem;
+    }
+
+    button {
+        font-size: 0.6rem;
+    }
+}
+
+@media(max-width: 500px) {
+    #time {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.5rem;
+    }
+}
+
+/* END RESPONSIVE STYLES */
